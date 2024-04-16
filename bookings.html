@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="prac.css">
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  
+   <style>
+    .error {
+    color: red;
+    font-size: 0.15em;
+    margin-top: 5px;
+}
+
+.inputBox.error input {
+    border-color: #ff3860;
+}
+
+.inputBox.error .error {
+    color: #ff3860;
+    font-size: 10px;
+    height: 13px;
+}
+.booking-form {
+      display: flex;
+    }
+
+    .booking-form .form-container {
+      flex: 1;
+      margin-right: 20px; /* Adjust as needed */
+    }
+
+    .booking-form .policy-container {
+      flex: 1;
+    }
+
+    /* Additional styles for policy section */
+    .policy-container {
+      overflow-y: auto; /* Enable scrolling for policy section */
+      padding: 0 20px; /* Adjust padding as needed */
+    }
+
+    /* Ensure the policy content does not overflow */
+    .policy-content {
+      max-height: 80vh; /* Adjust as needed */
+    }
+
+    /* Style for banking details */
+    .bank-details {
+      margin-top: 5px; /* Adjust spacing */
+    }
+    i{
+      font-size: 30px;
+      cursor:pointer;
+      position: absolute;
+      /* top:50%; */
+      /* left:50%; */
+      transform: translate(-50%, -50%);
+    }
+   
+    .date-message{
+    color:green;
+    font-size: 12px;
+
+}
+.available-date {
+    color: green; /* Green color for available date message */
+    font-size: 14px;
+}
+
+.unavailable-date {
+    color: red; /* Red color for unavailable date message */
+    font-size: 14px;
+}
+
+
+   </style>   
+</head>
+<body>
+<section >
+            
+    <header>
+      <!--navbar-->
+             <nav class="navbar" role="navigation" aria-label="main menu">
+              <!--logo-->
+              <img class="logo"id="logoImage" src="pictures\LetsGetB. (2).png" height="100px"  alt="">
+              <img class="logo" id="logoImageDark" src="pictures/blackmode.svg" height="40%" width="20%" alt="" style="display: none; margin-bottom: 50%; margin-top: -65px">
+
+
+              <ul class="navbar" id="navLinks"> <!-- Add an ID to the <ul> element -->
+                  <li><a href="intouch.html">Contact Us</a></li>
+                  <li><a href="bookings.html">Bookings</a></li>
+                  <li><a class="active" href="services.html">Services</a></li>
+                  <li><a href="AboutUs2.html">About Us</a></li>
+                  <li><a href="index.html">Home</a></li>
+              </ul>
+              <!-- <img src="pictures/moon_dark_mode_night-2-512.png" id="icon"> -->
+          </nav>
+      <i class="bi-brightness-high-fill" id="toggleDark"></i>
+    </header>
+</section>
+
+
+  <section class="vid-section">
+      
+      <div class="Heading1">
+                  <h1>Booking</h1>
+                  <p >Make a  <span class="w3-tag">Booking</span> with us<br></p>
+              </div>
+  </section>
+<section class="visit" id="visit">
+ 
+    <h1 class="heading"> Book a slot </h1>
+
+        <div class="row">
+          <form id="form" action="https://127.0.0.1:5073/api/booking/submit-booking" method="POST">
+                <h3>Book your slot</h3>
+                <div class="inputBox">
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <input type="text" id="surname" name="surname" placeholder="Your Surname" required>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <input type="email" id="email" name="email" placeholder="Your e-mail" required>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <input type="date" id="date" name="date" required>
+                    
+                    <div class="error"></div>
+                </div>
+                <div id="date-message" class="error"></div> <!-- Message container -->
+
+                <div class="inputBox">
+                    <input type="time" id="time" name="time" required>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <select id="hair_length" name="hair_length" class="ubude" required>
+                        <option value="">Select Hair Length</option>
+                        <option value="back">Back length</option>
+                        <option value="bum">Bum length</option>
+                        <option value="waist">Waist length</option>
+                        <option value="tigh">Thigh length</option>
+                        <option value="knee">Knee length</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <select id="braid_type" name="braid_type" class="ubunjani" required>
+                        <option value="">Select Hair Type</option>
+                        <option value="knotless braids">Knotless braids</option>
+                        <option value="boho braids">Boho braids</option>
+                        <option value="peekaboo braids">Peekaboo braids</option>
+                        <option value="curly ends">Curly ends</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <select id="hair_size" name="hair_size" class="ubungakanani" required>
+                        <option value="">Select Hair Size</option>
+                        <option value="small">Small</option>
+                        <option value="s/m">Small/Medium</option>
+                        <option value="m/l">Medium/Large</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Message">
+                    <div class="error"></div>
+                </div>
+                <div class="inputBox">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload POP" name="submit">
+                </div>
+            
+                <input type="submit" value="Submit" class="btn">
+            </form>
+    
+            <div class="policy-container">
+                <div class="policy-content">
+                  <!-- Policy content goes here -->
+                  <h3  class="heading">Booking Policy</h3><br>
+                  <p>A deposit of <span class="w3-tag">R100 is required</span> to secure a booking. Submit a proof of payment on the file section on the form.
+                     Use the details delow to pay your deposit. Reference your name.<span class="w3-tag">No deposit,No booking!</span> </p><br>
+               <br>
+                  <div class="note" id="note">
+                    <!-- Note content will be dynamically added here -->
+                  </div>
+                </div>
+              </div>
+            
+        </div>
+       
+</section>
+<!--Footer-->
+<footer >
+    <div class="main-footer">
+    <div class="footer-ContactUs">
+
+        <!-- social media header-->
+        <h3 class="contactUs-footer"> Follow Us</h3>
+
+        
+        <!--social media links-->
+        <a href="mailto:letsgetbraided07@gmail.com">
+            <img src="./pictures/icons8-email-64.png" width="30PX" height="" alt="">
+        </a>
+
+        <a href="https://www.instagram.com/_letsgetbraided?igsh=N2l6dGdrcXo4bG53&utm_source=qr">
+            <img src="./pictures/icons8-instagram-94.png" width="30PX" height="" alt="">
+        </a>
+
+        <a href="https://www.tiktok.com/@letsgetbraided?_t=8jjUwfVaFZW&_r=1">
+            <img src="./pictures/icons8-tik-tok-48.png" width="30PX" height="" alt="">
+        </a>
+        
+    </div>
+
+  <!--Address-->
+    <div class="address" id="address">
+        <h3 class="Home-Address"> Physical Address</h3>
+            <p class="physicaladdress"> <img src="./pictures/icons8-home-24.png" width="20px" height="" alt=""> 97 Durham Avenue</p>
+            <p class="physicaladdress1" >Salt River</p>
+            <p class="physicaladdress1">Cape Town,</p>
+            <p class="physicaladdress1">7925</p>
+    
+    </div>
+
+    <!--Openning hours-->
+    <div class="opening-hours" id="opening-hours">
+
+    <h3 class="opening-hours-H"> Openning Hours</h3> 
+
+        <p> Mon - Fri 8:00am - 18:00pm </p>
+        <p> Saturday  8:00am - 17:00pm </p>
+        <p> Sundays closed</p>
+        <p> Public holidays closed</p>
+    </div>
+    <div class="bank-details">
+<h3>Banking Details</h3>
+      <p>Account Name: S Sogayise</p>
+      <p>Account Number: 1589779019</p>
+      <p>Bank Name: Capitec Bank</p>
+      <p>Phone number: 0658848314</p>
+    </div>
+</div>
+
+
+   <!--Copy write-->
+<div class="copywrite">
+
+    <p> Def Girls &#169;</p>
+
+</div>
+
+</footer> 
+<script defer src="./booking.js"></script>
+
+<!-- darkmode code -->
+<script>
+  const toggle = document.getElementById("toggleDark");
+  const body = document.querySelector('body');
+  const headerNavLinks = document.querySelectorAll('.navbar a');
+  const footerText = document.querySelector('.copywrite');
+  const address = document.getElementById('address');
+  const openingHours = document.getElementById('opening-hours');
+
+  toggle.addEventListener('click', function() {
+    this.classList.toggle('bi-moon');
+    if (this.classList.contains('bi-moon')) {
+        // Dark mode
+        body.style.background = '#222222';
+        body.style.color = 'white';
+        headerNavLinks.forEach(link => {
+            link.style.color = 'white';
+        });
+        footerText.style.color = 'white'; // Change footer text color to white
+        address.style.color = 'white'; // Change address text color to white
+        openingHours.style.color = 'white'; // Change opening hours text color to white
+        // Show dark mode logo and hide light mode logo
+        document.getElementById('logoImage').style.display = "none";
+        document.getElementById('logoImageDark').style.display = "block";
+    } else {
+        // Light mode
+        body.style.background = 'white';
+        body.style.color = '#222222';
+        headerNavLinks.forEach(link => {
+            link.style.color = '#222222';
+        });
+        footerText.style.color = '#222222'; // Change footer text color to black
+        address.style.color = '#222222'; // Change address text color to black
+        openingHours.style.color = '#222222'; // Change opening hours text color to black
+        // Show light mode logo and hide dark mode logo
+        document.getElementById('logoImage').style.display = "block";
+        document.getElementById('logoImageDark').style.display = "none";
+        
+    }
+    body.style.transition = '2s';
+    headerNavLinks.forEach(link => {
+        link.style.transition = '2s';
+    });
+    footerText.style.transition = '2s'; // Add transition for footer text color change
+    address.style.transition = '2s'; // Add transition for address text color change
+    openingHours.style.transition = '2s'; // Add transition for opening hours text color change
+});
+
+</script>
+
+
+
+<script>
+
+    // Function to update the note based on user's selection
+    const noteContentMap = {};
+  const hairLengthPackRequirements = {
+    "back": 3,
+    "bum": 4,
+    "waist": 4, 
+    "thigh": 5,
+    "knee": 5
+  };
+
+// Define arrays for the other options
+const braidTypeOptions = ["knotless braids", "boho braids", "peekaboo braids", "curly ends"];
+const hairSizeOptions = ["small", "s/m", "m/l", "large"];
+
+
+// Generate combinations and assign note content
+Object.keys(hairLengthPackRequirements).forEach(hairLength => {
+  braidTypeOptions.forEach(braidType => {
+    hairSizeOptions.forEach(hairSize => {
+      const key = `${hairLength}_${braidType}_${hairSize}`;
+      let noteContent = `You have chosen ${hairSize}  ${braidType} ${hairLength} length . Note: You need ${hairLengthPackRequirements[hairLength]} packs of hair extensions.`;
+      noteContentMap[key] = noteContent;
+    });
+  });
+});
+
+// Function to update the note based on user's selection
+function updateNote() {
+  let hairLength = document.getElementById("hair_length").value;
+  let braidType = document.getElementById("braid_type").value;
+  let hairSize = document.getElementById("hair_size").value;
+  let note = document.getElementById("note");
+
+  // Generate a key to access the note content from the map
+  let key = `${hairLength}_${braidType}_${hairSize}`;
+
+  // Check if the key exists in the map
+  if (noteContentMap.hasOwnProperty(key)) {
+    // If the key exists, display the corresponding note content
+    note.textContent = noteContentMap[key];
+
+    // Check if the screen size is small
+    if (window.innerWidth <= 768) { // You can adjust the screen size threshold as needed
+      // If the screen is small, display the note as an alert
+      alert(noteContentMap[key]);
+    }
+  } else {
+    // If the key does not exist in the map, display a default message
+    note.textContent = "Please select valid options.";
+  }
+}
+
+// Call the function initially and whenever form values change
+updateNote();
+document.getElementById("hair_length").addEventListener("change", updateNote);
+document.getElementById("braid_type").addEventListener("change", updateNote);
+document.getElementById("hair_size").addEventListener("change", updateNote);
+
+
+function configureDateInput() {
+    // Gets today's date
+    const today = new Date().toISOString().split('T')[0];
+    
+    // Set the min attribute of the date input field to today's date so user cannot choose past dates
+    document.getElementById("date").setAttribute("min", today);
+  
+    //  available dates based on your schedule
+    const availableDates = ["2024-04-07", "2024-04-08", "2024-04-10", "2024-04-15", "2024-04-17", "2024-04-20", "2024-04-13"]; // Example dates, replace with your actual available dates
+    
+    // date input element and message container
+    const dateInput = document.getElementById("date");
+    const messageContainer = document.getElementById("date-message");
+  
+    //  event listener to dynamically show available dates message
+    dateInput.addEventListener('input', function() {
+      const selectedDate = dateInput.value;
+      const isAvailable = availableDates.includes(selectedDate);
+      if (!isAvailable) {
+        messageContainer.textContent = "Please select an available date.";
+        messageContainer.classList.remove("available-date");
+        messageContainer.classList.add("unavailable-date");
+      } else {
+        messageContainer.textContent = "Selected date is available!";
+        messageContainer.classList.remove("unavailable-date");
+        messageContainer.classList.add("available-date");
+      }
+    });
+
+    // a class to available dates for styling
+    const allDates = dateInput.querySelectorAll("option");
+
+    allDates.forEach(date => {
+        if (availableDates.includes(date.value)) {
+            date.classList.add("available");
+        }
+    });
+}
+  
+// Call the function to configure the date input field
+configureDateInput();
+
+  </script>
+  <script>
+   // JavaScript code to handle form submission
+document.getElementById('form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(this);
+    const backendUrl = 'https://127.0.0.1:5073/api/booking/submit-booking';
+
+    try {
+        const response = await fetch(backendUrl, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            alert(data.message); // Display success message
+        } else {
+            const errorData = await response.json();
+            alert(errorData.message); // Display error message
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
+    }
+});
+
+
+</script>
+</body>
+</html>

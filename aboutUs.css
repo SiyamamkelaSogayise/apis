@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Custom';
+    src: url('Font/riesling.ttf');
+}
+
+.img-item{
+    padding-bottom: 10px;
+}
+.heading{
+    font-family: 'Custom';
+    color: #bda18c;
+    font-size: 50pt;
+    text-decoration: underline;
+}
+.team-heading{
+    font-family: 'Custom', !important;
+    font-size: 30pt;
+    color: #bda18c;
+    text-decoration: underline;
+}

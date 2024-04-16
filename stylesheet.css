@@ -1,0 +1,175 @@
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1025px) {
+  .container {
+    width: 80%;
+  }
+}
+@font-face {
+  font-family: 'Custom';
+  src: url('Font/riesling.ttf');
+}
+
+
+.w3-tag {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+.pictures-section.video-container video {
+    background-color: #f2f2f2; /* Add background color for clarity */
+    padding: 50px; /* Add padding for spacing */
+    margin-bottom: 20px; /* Add margin to separate from other sections */
+    margin-bottom: auto;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto; }
+    @media (min-width: 576px) {
+      .container {
+        max-width: 540px; } }
+    @media (min-width: 768px) {
+      .container {
+        max-width: 720px; } }
+    @media (min-width: 992px) {
+      .container {
+        max-width: 960px; } }
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px; } 
+}
+/*services  styles*/
+.services{
+  background-color: var(--main-color);
+}
+.services .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+  gap: 2rem;
+}
+.services .box-container .box{
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.services .box-container .box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.services .box-container .box img{
+  transform: scale(1.1);
+}
+.services .box-container .box:hover .content{
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background: var(--dark-bg);
+  
+}
+.services .box-container .box .content h3{
+  text-align: center;
+  font-size: 3rem;
+  color: var(--white);
+  padding-top: 40rem;
+  text-transform:capitalize ;  
+}
+.services .box-container .box:hover .content{
+  display: flex;
+}
+/*services end styles*/
+
+/*Pricing*/
+.pricing{
+  background-image: url();
+  background-attachment: fixed;
+}
+.pricing .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.pricing .box-container .box{
+  height: 500px;
+  width: 300px;
+  margin: 20px 40px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: var(--primary-color);
+}
+.pricing .box-container .box::before,
+.pricing .box-container .box::after{
+  content: '';
+  position: absolute;
+  height: 200px;
+  width:200px;
+  border-radius: 50%;
+  opacity: .5;
+}
+.pricing .box-container .box::before{
+  background: var(--light-bg);
+  top: -10px;
+  left: 80%;
+}
+.pricing .box-container .box::after{
+  background: var(--main-color);
+  top: -10px;
+  right: 80%;
+}
+.pricing .box-container .box .title{
+   margin: 30px 0;
+   font-size: 26px;
+   color: var(--main-color);
+   text-transform: uppercase;
+}
+.image-container {
+  width: 250px;
+  height: 300px;
+  margin: 0 auto; /* Center images horizontally */
+  overflow: hidden; /* Ensure images don't overflow their containers */
+  border-radius: 10px; /* Add border radius for rounded corners */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover entire container */
+}

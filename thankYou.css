@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:1,300,400,400italic,700,700italic,980°);
+:root{
+    --main-color: #d7c7ae;
+    --primary-color: #8a6d46;
+    --hover: #5a4d3e;
+    --black: #2a201c;
+    --white: #fff;
+    --light-bg: #f3efec;
+    --dark-bg: rgba(0, 0, 0, .7);
+    --border: .1rem solid #aaa;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+html{
+    font-size: 67.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+   }
+   html::-webkit-scrollbar{
+    width: .6rem;
+   }
+   html::-webkit-scrollbar-track{
+    background-color: var(--white);
+   }
+   html::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+   }
+   section{
+    padding: 5rem 7%;
+   }
+
+   *::selection{
+    background: #eb4d4b;
+    color: #fff;
+}
+
+body{
+        font-family: 'Playfair Display', sans-serif;
+        margin: 0;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--main-color);
+}
+
+.container {
+  padding: 30px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--black);
+  font-size: 5em;
+  margin-bottom: 15px;
+}
+
+p {
+  color: var(--black);
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+
+.btn {
+    background-color: var(--box-shadow);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background-color: var(--hover);
+  }
